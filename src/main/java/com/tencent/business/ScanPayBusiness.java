@@ -178,7 +178,7 @@ public class ScanPayBusiness {
 
                 log.i("【一次性支付成功】");
 
-                if(!scanPayResData.getTransaction_id().equals("")){
+                if(!"".equals(scanPayResData.getTransaction_id())){
                     transactionID = scanPayResData.getTransaction_id();
                 }
 
@@ -280,7 +280,7 @@ public class ScanPayBusiness {
             return false;
         } else {
             if (scanPayQueryResData.getResult_code().equals("SUCCESS")) {//业务层成功
-                if(!scanPayQueryResData.getTransaction_id().equals("")){
+                if(!scanPayQueryResDatals(scanPayQueryResData.getTransaction_id())){
                     transactionID = scanPayQueryResData.getTransaction_id();
                 }
                 if (scanPayQueryResData.getTrade_state().equals("SUCCESS")) {
