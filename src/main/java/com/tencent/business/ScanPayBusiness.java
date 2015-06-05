@@ -280,7 +280,7 @@ public class ScanPayBusiness {
             return false;
         } else {
             if (scanPayQueryResData.getResult_code().equals("SUCCESS")) {//业务层成功
-                if(!scanPayQueryResDatals(scanPayQueryResData.getTransaction_id())){
+                if(!"".equals(scanPayQueryResData.getTransaction_id())){
                     transactionID = scanPayQueryResData.getTransaction_id();
                 }
                 if (scanPayQueryResData.getTrade_state().equals("SUCCESS")) {
